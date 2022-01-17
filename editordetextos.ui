@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>EditorDeTextos</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="assets/assets.qrc">
+    <normaloff>:/icons-text-edit/center.png</normaloff>:/icons-text-edit/center.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -37,6 +41,7 @@
     <addaction name="actionAbrir"/>
     <addaction name="actionSalvar"/>
     <addaction name="actionSalvar_como"/>
+    <addaction name="actionImprimir"/>
     <addaction name="separator"/>
     <addaction name="actionSair"/>
    </widget>
@@ -50,8 +55,24 @@
     <addaction name="actionRefazer"/>
     <addaction name="actionDesfazer"/>
    </widget>
+   <widget class="QMenu" name="menuFormatar">
+    <property name="title">
+     <string>Formatar</string>
+    </property>
+    <addaction name="actionCor"/>
+    <addaction name="actionBackground"/>
+    <addaction name="actionFonte"/>
+   </widget>
+   <widget class="QMenu" name="menuSobre">
+    <property name="title">
+     <string>Sobre</string>
+    </property>
+    <addaction name="actionSobre"/>
+   </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuEditar"/>
+   <addaction name="menuFormatar"/>
+   <addaction name="menuSobre"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -73,6 +94,7 @@
    <addaction name="actionRecortar"/>
    <addaction name="actionRefazer"/>
    <addaction name="actionDesfazer"/>
+   <addaction name="actionImprimir"/>
   </widget>
   <action name="actionNovo">
    <property name="icon">
@@ -176,6 +198,51 @@
    </property>
    <property name="text">
     <string>Desfazer</string>
+   </property>
+  </action>
+  <action name="actionCor">
+   <property name="icon">
+    <iconset resource="assets/assets.qrc">
+     <normaloff>:/icons-text-edit/cor.png</normaloff>:/icons-text-edit/cor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cor</string>
+   </property>
+  </action>
+  <action name="actionBackground">
+   <property name="icon">
+    <iconset resource="assets/assets.qrc">
+     <normaloff>:/icons-text-edit/background.png</normaloff>:/icons-text-edit/background.png</iconset>
+   </property>
+   <property name="text">
+    <string>Background</string>
+   </property>
+  </action>
+  <action name="actionFonte">
+   <property name="icon">
+    <iconset resource="assets/assets.qrc">
+     <normaloff>:/icons-text-edit/font.png</normaloff>:/icons-text-edit/font.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fonte</string>
+   </property>
+  </action>
+  <action name="actionSobre">
+   <property name="icon">
+    <iconset resource="assets/assets.qrc">
+     <normaloff>:/icons-text-edit/about.png</normaloff>:/icons-text-edit/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sobre</string>
+   </property>
+  </action>
+  <action name="actionImprimir">
+   <property name="icon">
+    <iconset resource="assets/assets.qrc">
+     <normaloff>:/icons-text-edit/print.png</normaloff>:/icons-text-edit/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimir</string>
    </property>
   </action>
  </widget>

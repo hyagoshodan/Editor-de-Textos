@@ -102,3 +102,79 @@ void EditorDeTextos::on_actionSair_triggered()
 {
     close();
 }
+
+void EditorDeTextos::on_actionCopia_triggered()
+{
+    ui->textEdit->copy();
+}
+
+void EditorDeTextos::on_actionColar_triggered()
+{
+    ui->textEdit->paste();
+}
+
+void EditorDeTextos::on_actionRecortar_triggered()
+{
+    ui->textEdit->cut();
+}
+
+void EditorDeTextos::on_actionRefazer_triggered()
+{
+    ui->textEdit->redo();
+
+}
+
+void EditorDeTextos::on_actionDesfazer_triggered()
+{
+    ui->textEdit->undo();
+
+}
+
+void EditorDeTextos::on_actionCor_triggered()
+{
+   QColor color = QColorDialog::getColor( Qt::black, this, "Escolha uma cor");
+   if( color.isValid() )
+   {
+       ui->textEdit->setTextColor( color );
+   }
+}
+
+void EditorDeTextos::on_actionBackground_triggered()
+{
+    QColor color = QColorDialog::getColor( Qt::black, this, "Escolha uma cor");
+    if( color.isValid() )
+    {
+        ui->textEdit->setTextBackgroundColor( color );
+    }
+}
+
+void EditorDeTextos::on_actionFonte_triggered()
+{
+    bool ok;
+    QFont font = QFontDialog::getFont( &ok, this);
+    if( ok )
+    {
+        ui->textEdit->setFont(font);
+    }else{
+        return;
+    }
+}
+
+void EditorDeTextos::on_actionSobre_triggered()
+{
+    QMessageBox::about(this, "Sobre esse programa", "Desenvolvido no Curso de Qt Moderno com C++. <br>"
+                       "<a href='https://terminalroot.com.br/'>Acesse https://terminalroot.com.br/</a><br>");
+}
+
+void EditorDeTextos::on_actionImprimir_triggered()
+{
+    QPrinter printer;
+    QPrintDialog dialog_printer;
+
+    if( dialog_printer.exec() == QDialog::Rejected )
+    {
+        return;
+    }
+
+    ui->textEdit->print( &printer );
+}
